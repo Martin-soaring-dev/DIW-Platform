@@ -8,7 +8,7 @@
 
 Fixture[^7] and assembly[^6] are here.
 
-![Over view of DIW platform](.\assets\DIW platform.png)
+![Over view of DIW platform](assets\DIW platform.png "Over view of DIW platform: (1) Fluid dispenser, (2) Step Motor Driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate.")
 
 As show above, The platform include controller board, fluid dispenser, and a 3-Axis platform. They are connected as below: 
 
@@ -68,7 +68,7 @@ Marlin official website: https://marlinfw.org/
 
 Original Marlin resources: https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4
 
-Customized Marlin resources[^5]
+Customized Marlin resources: https://lecloud.lenovo.com/share/2JQMt9CWcRS9uVE4x （密码：pgjg）
 
 ## (2) Step Motor, Driver and endstop
 
@@ -360,7 +360,7 @@ It needs to be stated that the author of this software violated the One China Pr
 [^2]: [3D model of syringe](.\assets\3Dmodels\SLDPRT\syringe.zip) 
 [^3]: [3D model of nozzle](.\assets\3Dmodels\SLDPRT\tips.rar) 
 [^4]: [Data sheet of nozzle](.\assets\技术表格.pdf) 
-[^5]: [Customized Marlin firmware for AML DIW printer](.\assets\Marlin-NUS.zip)
+[^5]: [~~Customized Marlin firmware for AML DIW printer~~](.\assets\Marlin-NUS.zip)
 [^6]: [Assembly - Carriage-Z.STEP](.\assets\3Dmodels\STP\Assembly - Carriage-Z.STEP)
 [^7]: [STLs](.\assets\3Dmodels\STL)
 
