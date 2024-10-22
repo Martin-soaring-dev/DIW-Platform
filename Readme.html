@@ -1,0 +1,765 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>Readme</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='material-extrusion-3d-printing-platform--nus-cde-aml'><span>Material Extrusion 3D printing platform @ NUS CDE AML</span></h1><h1 id='content'><span>Content</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#material-extrusion-3d-printing-platform--nus-cde-aml">Material Extrusion 3D printing platform @ NUS CDE AML</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#content">Content</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#1-introduction">1. Introduction</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n9"><a class="md-toc-inner" href="#1-controller-board-and-firmware">(1) Controller Board and Firmware</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n13"><a class="md-toc-inner" href="#a-technical-parameters">a. Technical Parameters</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n50"><a class="md-toc-inner" href="#b-wire-connection">b. Wire Connection</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" href="#c-firmware">c. Firmware</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n71"><a class="md-toc-inner" href="#2-step-motor-driver-and-endstop">(2) Step Motor, Driver and endstop</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n72"><a class="md-toc-inner" href="#a-step-motor">a. Step Motor</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n76"><a class="md-toc-inner" href="#b-driver">b. Driver</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n80"><a class="md-toc-inner" href="#c-wire-connection">c. Wire Connection</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n85"><a class="md-toc-inner" href="#d-endstop">d. Endstop</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n89"><a class="md-toc-inner" href="#3-pressure-dispenser">(3) Pressure Dispenser</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n91"><a class="md-toc-inner" href="#a-technical-indicators">a. Technical indicators：</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n111"><a class="md-toc-inner" href="#b-instructions">b. Instructions:</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n117"><a class="md-toc-inner" href="#c-operation">c. Operation</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n123"><a class="md-toc-inner" href="#d-additional-material">d. Additional Material</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n125"><a class="md-toc-inner" href="#2-get-start">2. Get Start</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n136"><a class="md-toc-inner" href="#1-prepare-g-code">(1) Prepare G-Code</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n137"><a class="md-toc-inner" href="#a-slicing-software">a. Slicing software</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n138"><a class="md-toc-inner" href="#①-slic3r">① Slic3r</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n142"><a class="md-toc-inner" href="#②-prusaslicer">② PrusaSlicer</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n147"><a class="md-toc-inner" href="#2-connection-and-communication">(2) Connection and communication</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n148"><a class="md-toc-inner" href="#a-connect-control-board-to-pc">a. Connect control board to PC</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n149"><a class="md-toc-inner" href="#b-user-interface-pronterface">b. user interface: pronterface</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n157"><a class="md-toc-inner" href="#3-tips">3 Tips</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n158"><a class="md-toc-inner" href="#1-using-notepad++-to-edit-gcode-file">(1) Using Notepad++ to edit .gcode file.</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n162"><a class="md-toc-inner" href="#support-materials">Support Materials</a></span></p></div><h1 id='1-introduction'><span>1. Introduction</span></h1><p><span>Fixture</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span> and assembly</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span> are here.</span></p><p><img src=".\assets\DIW platform.png" referrerpolicy="no-referrer" alt="Over view of DIW platform" title="Over view of DIW platform: (1) Fluid dispenser, (2) Step Motor Driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate."></p><p><span>As show above, The platform include controller board, fluid dispenser, and a 3-Axis platform. They are connected as below: </span></p><p><img src=".\assets\DIW platform-1729248264280-3.png" referrerpolicy="no-referrer" alt="DIW platform wiring diagram" title="DIW platform wiring diagram"></p><h2 id='1-controller-board-and-firmware'><span>(1) Controller Board and Firmware</span></h2><p><span>The control board uses the </span><a href='https://github.com/makerbase-mks/MKS-Monster8'><span>MKS-Monster8</span></a><span> control board from </span><a href='https://makerbase.com.cn/'><span>MakerBase</span></a><span>. This control board supports mainstream 3D printing firmware such as Marlin and Klipper. </span></p><p><img src=".\assets\image-20241018193834127.png" referrerpolicy="no-referrer" alt="image-20241018193834127"></p><p><span>You can find more information from </span><a href='https://github.com/makerbase-mks/MKS-Monster8'><span>GitHub</span></a><span>, </span><a href='https://www.bilibili.com/video/BV11h411x7KH?spm id from=333.999.0.0'><span>bilibili</span></a><span>, </span><a href='https://blog.csdn.net/gjy_skyblue/article/details/120348539'><span>Manual to set Marlin 2.0.X</span></a><span>, </span><a href='https://blog.csdn.net/gjy_skyblue/article/details/120472942?spm=1001.2014.3001.5501'><span>Manual to set Klipper</span></a><span>.</span></p><h3 id='a-technical-parameters'><span>a. Technical Parameters</span></h3><ul><li><p><span>MCU: STM32F407VET6, 168MHz, 512K flash, 192KB RAM</span></p></li><li><p><span>Power Supply：DC12-24V input(2 MP1584EN Output DC12V(For FANs) and DC5V)</span></p></li><li><p><span>3 PWM FANs + 3 power output(all power can be select by jumper and select VIN, dc12V, dc5V)</span></p></li><li><p><span>axis drivers and 9 motor interface(Driver0,1,2-1,2-2,3,4,5,6,7)</span></p></li><li><p><span>EXP1,EXP2 support MKS MINI12864,MKS TS35,LCD12864,LCD2004</span></p></li><li><p><span>USART(usart1:PA9,PA10) support MKS H43 or for other serial communication</span></p></li><li><p><span>6 endstop support power select(X-,X+,Y-,Y+,Z-,Z+) and 3D TOUCH(PA8) interface</span></p></li><li><p><span>4K eeprom on board(connect to I2C)</span></p></li><li><p><span>Built-in CAN transceiver and interface(connect to CAN)</span></p></li><li><p><span>Integrated SPI communication microsd card and reserved SPI signal interface</span></p></li><li><p><span>Integrated UDISK</span></p></li><li><p><span>Integrated virtural USB device</span></p></li><li><p><span>Support TMC UART and SPI mode, SENSORLESS_HOMING function(Diag0-5,connect to X-,Y-,Z-,X+,Y+,Z+)</span></p></li><li><p><span>Support driver power select(5V or 3.3V)</span></p></li><li><p><span>Has TVS power spike protection</span></p></li><li><p><span>Possess power reverse connection protection function</span></p></li><li><p><span>Support DFU mode set by button(Boot0)</span></p></li></ul><p><img src="./assets/image-6.png" referrerpolicy="no-referrer" alt="image-6"><img src="./assets/image-7.png" referrerpolicy="no-referrer" alt="image-7"></p><h3 id='b-wire-connection'><span>b. Wire Connection</span></h3><p><span>However, our platform needs to use the control of X, Y, and Z axes, no extrusion heating requirements, a hot bed reserved for the substrate, and the fan control port reserved for air pressure switch control and limit switch. Considering the above, the general wiring scheme is as follows:</span></p><p><img src="./assets/接线-控制板.jpg" referrerpolicy="no-referrer" alt="接线-控制板" title="Wires Connection of Control Board"></p><h3 id='c-firmware'><span>c. Firmware</span></h3><p><strong><span>Attention</span></strong><span>: This part is in case you need to adjust firmware or fix. Otherwise no need to make any adjustment.</span></p><p><a href='https://marlinfw.org/'><span>Marlin</span></a><span> is the most commonly used open source 3D printing firmware. We have modified it accordingly to meet the needs of the device:</span></p><ol start='' ><li><p><span>Enable G05 spline interpolation</span></p></li><li><p><span>Enable XYZ3 axes and set the pulse equivalent (the number of pulses corresponding to 1mm movement of each axis)</span></p></li><li><p><span>Turn off the extruder cold extrusion limit (disable the temperature sensor and set the minimum extrusion temperature to 0℃)</span></p></li><li><p><span>Adjust the configuration printing range according to the actual travel range.</span></p></li><li><p><span>Set the return to zero direction to X-, Y-, Z+</span></p></li></ol><p><span>Programming environment: Use the PlatformIO plug-in in the VScode environment.</span></p><p><span>Marlin official website: </span><a href='https://marlinfw.org/' target='_blank' class='url'>https://marlinfw.org/</a></p><p><span>Original Marlin resources: </span><a href='https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4' target='_blank' class='url'>https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4</a></p><p><span>Customized Marlin resources</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup></p><h2 id='2-step-motor-driver-and-endstop'><span>(2) Step Motor, Driver and endstop</span></h2><h3 id='a-step-motor'><span>a. Step Motor</span></h3><p><span>The motor used is a 57 stepper motor.</span></p><p><span>The stepper motor is first connected to the driver, which needs to be powered and connected to the control board.</span></p><p><span>Its control mode is position control mode, that is, each time a pulse is sent, the stepper motor rotates a specific angle according to the driver&#39;s setting. For a 57 stepper motor, the step angle θ is 0.8° (that is, 1 pulse corresponds to a 0.8° rotation of the motor shaft), and the driver can set the coefficient n, so that the step angle becomes θ/n, thereby improving the motion accuracy. However, this improvement is also limited. It is generally believed that when the subdivision number is greater than 32, the effect of improving the accuracy will become limited. When the subdivision number is higher than 32, the main contribution is to improve the smoothness of the movement.</span></p><h3 id='b-driver'><span>b. Driver</span></h3><p><span>I didn&#39;t see the brand and model of the drive I was using, but I copied down its settings panel:</span></p><p><img src="./assets/接线-不进驱动.jpg" referrerpolicy="no-referrer" alt="接线-不进驱动"></p><p><span>The current peak and subdivision can be adjusted by adjusting the driver&#39;s dip switches. The original configuration is highlighted, and I used that configuration.</span></p><h3 id='c-wire-connection'><span>c. Wire Connection</span></h3><p><span>previous-version wire connection:</span></p><p><img src="./assets/原有线序-步进电机.jpg" referrerpolicy="no-referrer" alt="原有线序-步进电机"></p><p><span>Refer to the previous-version method for wiring. It should be pointed out that an adapter board is used to plug directly into the control board, and then the wiring is done. The common terminal (COM) is grounded, and the others include Enable, Pulse, and Direction. And the cable colors correspond to the following figure:</span></p><p><img src="./assets/接线-步进电机.jpg" referrerpolicy="no-referrer" alt="接线-步进电机"></p><h3 id='d-endstop'><span>d. Endstop</span></h3><p><img src="./assets/原有线序-步进电机 - 副本.jpg" referrerpolicy="no-referrer" alt="原有线序-步进电机 - 副本"></p><p><span>During the actual debugging process, it was found that the original vcc 5V could not meet the needs of use, and sometimes there would be a problem of insufficient voltage. The working voltage marked on the sensor is 0~24V, so 24V voltage was selected as the power supply.</span></p><p><span>As can be seen in the overview diagram, the Z+ endstop voltage selection is mentioned. Here, the applied voltage can be adjusted by adjusting the line connection method.</span></p><h2 id='3-pressure-dispenser'><span>(3) Pressure Dispenser</span></h2><p><span>The air pressure switch control is controlled through the Controllable Fan port, the voltage is adjusted to 24V and connected to the relay module, and the other end is connected to the air pressure dispenser (pressure dispenser) to perform air pressure switch control (switch control).</span></p><h3 id='a-technical-indicators'><span>a. Technical indicators：</span></h3><ol start='' ><li><p><span>Dispensing mode: 16 freely set modes, with dispensing time display*</span></p></li><li><p><span>Automatic timing dispensing: 00.01S-99.99S</span></p></li><li><p><span>Dispensing interval time: 0.1-9.9S (automatic timing function)</span></p></li><li><p><span>Input voltage: 220V±10% 50Hz/110V±10% 60Hz</span></p></li><li><p><span>Internal voltage: 12VDC/24VDC</span></p></li><li><p><span>Input air pressure: 10-100pSi</span></p></li><li><p><span>Output air pressure: 1-80 pSi</span></p></li><li><p><span>Dimensions: 235×225×63mm</span></p></li><li><p><span>Weight: 2.8kg</span></p></li></ol><h3 id='b-instructions'><span>b. Instructions:</span></h3><p><span>Refer to Manual of pressure dispenser</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><span>:</span></p><p><span>The SETUP four-position dispensing time programmer DIP switch on the back can be used to select 16 dispensing modes by toggling it. The mode combination settings are as follows:</span></p><table>
+<capital>Mode Sets</capital>
+<tr>
+<th rowspan=2 align="center">No.</th>
+<th colspan=4 align="center">Switch status</th>
+<th rowspan=2 align="center">Function</th>
+</tr>
+<tr>
+<th align="center">S1</th>
+<th align="center">S2</th>
+<th align="center">S3</th>
+<th align="center">S4</th>
+</tr>
+<tr>
+<th align="center">1</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  Inching mode, press/depress and hold to maintain extrusion</th>
+</tr>
+<tr>
+<th align="center">2</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  Hold mode: press/depress the switch once to continue extrusion for the set time; press/depress the switch again to stop extrusion.</th>
+</tr>
+<tr>
+<th align="center">3</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  Inching timing mode, press/depress and hold to maintain the extrusion time</th>
+</tr>
+<tr>
+<th align="center">4</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  Automatically and continuously extrude according to the set time</th>
+</tr>
+<tr>
+<th align="center">5</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 1 time according to the set time.</th>
+</tr>
+<tr>
+<th align="center">6</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 2 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">7</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 3 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">8</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 4 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">9</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 5 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">10</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 6 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">11</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="left">  Press/depress the switch once to squeeze out 7 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">12</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  Press/depress the switch once to squeeze out 8 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">13</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  Press/depress the switch once to squeeze out 9 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">14</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  Press/depress the switch once to squeeze out 10 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">15</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="left">  Press/depress the switch once to squeeze out 11 times according to the set time.</th>
+</tr>
+<tr>
+<th align="center">16</th>
+<th align="center">Off</th>
+<th align="center">Off</th>
+<th align="center">On</th>
+<th align="center">On</th>
+<th align="left">  Press/depress the switch once to squeeze out 12 times according to the set time.</th>
+</tr>
+</table><p>&nbsp;</p><p><span>The mode actually used is Set 1.</span></p><h3 id='c-operation'><span>c. Operation</span></h3><ol start='' ><li><p><span>Pressure adjustment: Adjust the air pressure by adjusting the black knob</span></p></li><li><p><span>Switch: You can press the small red button on the left to adjust manually, or you can use an external pedal to adjust manually (this interface has been modified for program control); the control method is detailed in the manual.</span></p></li></ol><h3 id='d-additional-material'><span>d. Additional Material</span></h3><p><span>3D model of Syringe Barrel</span><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span> and Nozzle</span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span>, and data sheet of Nozzle</span><sup class='md-footnote'><a href='#dfref-footnote-7' name='ref-footnote-7'>7</a></sup><span> are provided. </span></p><h1 id='2-get-start'><span>2. Get Start</span></h1><p><strong><span>Before start</span></strong><span> one need to ask Lab admin to provide compressed air.</span></p><ol start='' ><li><p><span>First we need to get the G code (generated by slicing, optimized and edited). </span></p></li><li><p><span>Then we need to connect the control board to the computer, open the user interface, establish serial communication, and then import the G code file to start printing. </span></p></li><li><p><span>During the printing process, the PC sends the G code to the buffer area of the control board through the serial port. The control board continuously reads the instructions in the buffer, and converts them into control signals through decoding and interpolation: enable, direction, pulse, and send them to the stepper motor driver, and then the driver controls the movement of the stepper motor.</span></p></li><li><p><span>The PC sends M106/M107 commands to the control board, which regulates the voltage of the port originally designated for fan switch control. This voltage change triggers the connected relay, thereby enabling switch control of the external interface reserved for the air pressure distributor, achieving the on/off switching of the air pressure.</span></p></li></ol><h2 id='1-prepare-g-code'><span>(1) Prepare G-Code</span></h2><h3 id='a-slicing-software'><span>a. Slicing software</span></h3><h4 id='①-slic3r'><span>① Slic3r</span></h4><p><span>Slic3r is an open source slicing software, but it has stopped development, so there are some bugs.</span></p><p><span>Web：</span><a href='https://slic3r.org/' target='_blank' class='url'>https://slic3r.org/</a></p><p><img src="./assets/scli3r.png" referrerpolicy="no-referrer" alt="scli3r"></p><h4 id='②-prusaslicer'><span>② PrusaSlicer</span></h4><p><span>PrusaSlicer is a fork of Slic3r, which is still under development and has a relatively active community. I used Slic3r before, but because of too many bugs, I have now switched to PrusaSlicer.</span></p><p><span>Web：</span><a href='https://www.prusa3d.com/page/prusaslicer_424/' target='_blank' class='url'>https://www.prusa3d.com/page/prusaslicer_424/</a></p><p><img src="./assets/PrusaSlicer.png" referrerpolicy="no-referrer" alt="PrusaSlicer"></p><p>&nbsp;</p><h2 id='2-connection-and-communication'><span>(2) Connection and communication</span></h2><h3 id='a-connect-control-board-to-pc'><span>a. Connect control board to PC</span></h3><h3 id='b-user-interface-pronterface'><span>b. user interface: pronterface</span></h3><p><span>Web: </span><a href='https://www.pronterface.com/' target='_blank' class='url'>https://www.pronterface.com/</a></p><p><img src="./assets/pronterface.png" referrerpolicy="no-referrer" alt="pronterface"></p><p><span>This computer [right-click] → Manage [Open &quot;Computer Management&quot;] → Click Device Manager → Check the port (find the new port that appears after connecting the control board and remember it)</span></p><p><img src="./assets/QQ_1722011347970.png" referrerpolicy="no-referrer" alt="QQ_1722011347970"></p><p><span>Select the appropriate port and baud rate to establish a connection:</span></p><p><img src="./assets/QQ_1722011575548.png" referrerpolicy="no-referrer" alt="QQ_1722011575548"></p><p><span>Manually control the movement of each axis and the air pressure switch to test whether the connection is successful.</span></p><h1 id='3-tips'><span>3 Tips</span></h1><h2 id='1-using-notepad++-to-edit-gcode-file'><span>(1) Using Notepad++ to edit .gcode file.</span></h2><p><span>Notepad++ (</span><a href='https://notepad-plus-plus.org/downloads/'><span>Downloads | Notepad++ (notepad-plus-plus.org)</span></a><span>) supports macro recording, which meets our needs in terms of functionality and, as far as I know, is irreplaceable.</span></p><p><span>It needs to be stated that the author of this software violated the One China Principle, and the author of this manual opposes any form of national division.</span></p><p><img src="./assets/image-20241018222854465.png" referrerpolicy="no-referrer" alt="image-20241018222854465"></p><h1 id='support-materials'><span>Support Materials</span></h1><p>&nbsp;</p><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <a href='.\assets\3Dmodels\STL'><span>STLs</span></a> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>2</span> <a href='.\assets\3Dmodels\STP\Assembly - Carriage-Z.STEP'><span>Assembly - Carriage-Z.STEP</span></a> <a name='dfref-footnote-2' href='#ref-footnote-2' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>3</span> <a href='.\assets\Marlin-NUS.zip'><span>Customized Marlin firmware for AML DIW printer</span></a> <a name='dfref-footnote-3' href='#ref-footnote-3' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>4</span> <a href='.\assets\JND-983A点胶机详细功能设置.docx'><span>Manual of pressure dispenser</span></a> <a name='dfref-footnote-4' href='#ref-footnote-4' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>5</span> <a href='.\assets\3Dmodels\SLDPRT\syringe.zip'><span>3D model of syringe</span></a><span> </span> <a name='dfref-footnote-5' href='#ref-footnote-5' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>6</span> <a href='.\assets\3Dmodels\SLDPRT\tips.rar'><span>3D model of nozzle</span></a><span> </span> <a name='dfref-footnote-6' href='#ref-footnote-6' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>7</span> <a href='.\assets\技术表格.pdf'><span>Data sheet of nozzle</span></a><span> </span> <a name='dfref-footnote-7' href='#ref-footnote-7' title='回到文档' class='reversefootnote' >↩</a></div></div></div></div>
+</body>
+</html>
