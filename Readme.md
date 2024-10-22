@@ -324,7 +324,7 @@ Web: https://www.pronterface.com/
 
 ![pronterface](./assets/pronterface.png)
 
-This computer [right-click] → Manage [Open "Computer Management"] → Click Device Manager → Check the port (find the new port that appears after connecting the control board and remember it)
+This computer [Win XP ~ Win10: right-click; Win11: Shift + right-click] → Manage [Open "Computer Management"] → Click Device Manager → Check the port (find the new port that appears after connecting the control board and remember it)
 
 ![QQ_1722011347970](./assets/QQ_1722011347970.png)
 
