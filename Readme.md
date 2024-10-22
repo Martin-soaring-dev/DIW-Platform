@@ -361,7 +361,7 @@ It needs to be stated that the author of this software violated the One China Pr
 [^3]: [3D model of nozzle](.\assets\3Dmodels\SLDPRT\tips.rar) 
 [^4]: [Data sheet of nozzle](.\assets\技术表格.pdf) 
 [^5]: [~~Customized Marlin firmware for AML DIW printer~~](.\assets\Marlin-NUS.zip)
-[^6]: [Assembly - Carriage-Z.STEP](.\assets\3Dmodels\STP\Assembly - Carriage-Z.STEP)
+[^6]: [Assembly-Carriage-Z.STEP](.\assets\3Dmodels\STP\Assembly-Carriage-Z.STEP)
 [^7]: [STLs](.\assets\3Dmodels\STL)
 
 [^8]: [0.41mm nozzles setting](assets\Set_Blue.ini)
