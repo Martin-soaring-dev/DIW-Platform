@@ -8,11 +8,11 @@
 
 Fixture[^7] and assembly[^6] are here.
 
-![Over view of DIW platform](assets\DIW platform.png "Over view of DIW platform: (1) Fluid dispenser, (2) Step Motor Driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate.")
+![Over view of DIW platform](assets/DIW_platform-1729561311102-3.png "Over view of DIW platform: (1) Fluid dispenser, (2) Step Motor Driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate.")
 
 As show above, The platform include controller board, fluid dispenser, and a 3-Axis platform. They are connected as below: 
 
-![DIW platform wiring diagram](.\assets\DIW platform-1729248264280-3.png "DIW platform wiring diagram")
+![DIW platform wiring diagram](assets/DIW_platform-1729248264280-3.png "DIW platform wiring diagram")
 
 ## (1) Controller Board and Firmware
 
