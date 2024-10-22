@@ -18,7 +18,7 @@ As show above, The platform include controller board, fluid dispenser, and a 3-A
 
 The control board uses the [MKS-Monster8](https://github.com/makerbase-mks/MKS-Monster8) control board from [MakerBase](https://makerbase.com.cn/). This control board supports mainstream 3D printing firmware such as Marlin and Klipper. 
 
-![image-20241018193834127](.\assets\image-20241018193834127.png)
+![image_20241018193834127](assets/image_20241018193834127.png)
 
 You can find more information from [GitHub](https://github.com/makerbase-mks/MKS-Monster8), [bilibili](https://www.bilibili.com/video/BV11h411x7KH?spm id from=333.999.0.0), [Manual to set Marlin 2.0.X](https://blog.csdn.net/gjy_skyblue/article/details/120348539), [Manual to set Klipper](https://blog.csdn.net/gjy_skyblue/article/details/120472942?spm=1001.2014.3001.5501).
 
