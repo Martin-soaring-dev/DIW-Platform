@@ -1,7 +1,6 @@
 # DIW Platform — Material Extrusion 3D Printing System
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)](https://windows.com)
 [![Firmware](https://img.shields.io/badge/Firmware-Marlin%202.1.2.4-brightgreen)](https://marlinfw.org)
 
 > **Direct Ink Writing (DIW)** 3D printing platform developed at **NUS CDE AML Lab**. This system adapts mainstream 3D printing hardware (MKS-Monster8 + Marlin) for room-temperature material extrusion, enabling precise deposition of functional inks (cement pastes, gels, slurries, etc.).
@@ -42,7 +41,7 @@ The platform consists of a controller board, fluid dispenser, and a 3-axis motio
 | Controller | MKS-Monster8 (STM32F407VET6, 168MHz) |
 | Motors | 57 stepper motors × 3 axes |
 | Dispenser | JND-983A pneumatic dispensing valve |
-| Nozzles | 0.4 mm / 0.8mm diameter |
+| Nozzles | 0.4 mm / 0.8 mm diameter |
 | Firmware | Marlin 2.1.2.4 (customized) |
 | Slicer | PrusaSlicer 2.7.4 |
 | Host Software | Pronterface |
@@ -318,11 +317,6 @@ Verify the connection by manually controlling each axis and the pneumatic switch
 | 7 | PrusaSlicer profile — 0.41mm nozzle | [Set_Blue.ini](./assets/Set_Blue.ini) |
 | 8 | PrusaSlicer profile — 0.84mm nozzle | [Set_Green.ini](./assets/Set_Green.ini) |
 
-[^1]: [Pressure dispenser manual](./assets/JND-983A点胶机详细功能设置.docx)
-[^2]: [Syringe barrel 3D model](./assets/3Dmodels/SLDPRT/syringe.zip)
-[^3]: [Nozzle 3D model](./assets/3Dmodels/SLDPRT/tips.rar)
-[^4]: [Nozzle data sheet](./assets/技术表格.pdf)
-[^5]: ~~[Customized Marlin firmware](./assets/Marlin-NUS.zip)~~ (archived)
 [^6]: [Z-axis carriage assembly (STEP)](./assets/3Dmodels/STP/Assembly-Carriage-Z.STEP)
 [^7]: [Printable fixtures (STL)](./assets/3Dmodels/STL)
 [^8]: [0.41mm nozzle PrusaSlicer profile](./assets/Set_Blue.ini)
@@ -330,5 +324,5 @@ Verify the connection by manually controlling each axis and the pneumatic switch
 
 ---
 
-> **Maintained by** NUS CDE AML Lab · **License:** [GPL v3](LICENSE) · **Last updated:** 2024-10-22
+> **Maintained by** NUS CDE AML Lab · **License:** [GPL v3](LICENSE) · **Last updated:** 2026-10-16
 
