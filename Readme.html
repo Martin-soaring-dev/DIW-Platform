@@ -609,157 +609,562 @@ header, .context-menu, .megamenu-content, footer{
 
 
 
-</style><title>Readme</title>
+</style><title>DIW Platform — Material Extrusion 3D Printing System</title>
+<style type='text/css'>
+@page { size: A4; margin: 16mm 14mm; }
+@media print {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-top: 0px; }
+  html { font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid-page; }
+  blockquote, figure, pre, img { break-inside: avoid-page; }
+  tr { break-inside: avoid-page; }
+  a { text-decoration: none; }
+}
+</style>
 </head>
+
 <body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='material-extrusion-3d-printing-platform--nus-cde-aml'><span>Material Extrusion 3D printing platform @ NUS CDE AML</span></h1><h1 id='content'><span>Content</span></h1><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n0"><a class="md-toc-inner" href="#material-extrusion-3d-printing-platform--nus-cde-aml">Material Extrusion 3D printing platform @ NUS CDE AML</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#content">Content</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n4"><a class="md-toc-inner" href="#1-introduction">1. Introduction</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n9"><a class="md-toc-inner" href="#1-controller-board-and-firmware">(1) Controller Board and Firmware</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n13"><a class="md-toc-inner" href="#a-technical-parameters">a. Technical Parameters</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n50"><a class="md-toc-inner" href="#b-wire-connection">b. Wire Connection</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n53"><a class="md-toc-inner" href="#c-firmware">c. Firmware</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n71"><a class="md-toc-inner" href="#2-step-motor-driver-and-endstop">(2) Step Motor, Driver and endstop</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n72"><a class="md-toc-inner" href="#a-step-motor">a. Step Motor</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n76"><a class="md-toc-inner" href="#b-driver">b. Driver</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n80"><a class="md-toc-inner" href="#c-wire-connection">c. Wire Connection</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n85"><a class="md-toc-inner" href="#d-endstop">d. Endstop</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n89"><a class="md-toc-inner" href="#3-pressure-dispenser">(3) Pressure Dispenser</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n91"><a class="md-toc-inner" href="#a-technical-indicators">a. Technical indicators：</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n111"><a class="md-toc-inner" href="#b-instructions">b. Instructions:</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n117"><a class="md-toc-inner" href="#c-operation">c. Operation</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n123"><a class="md-toc-inner" href="#d-additional-material">d. Additional Material</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n125"><a class="md-toc-inner" href="#2-get-start">2. Get Start</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n136"><a class="md-toc-inner" href="#1-prepare-g-code">(1) Prepare G-Code</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n137"><a class="md-toc-inner" href="#a-slicing-software">a. Slicing software</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n138"><a class="md-toc-inner" href="#①-slic3r">① Slic3r</a></span><span role="listitem" class="md-toc-item md-toc-h4" data-ref="n142"><a class="md-toc-inner" href="#②-prusaslicer">② PrusaSlicer</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n147"><a class="md-toc-inner" href="#2-connection-and-communication">(2) Connection and communication</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n148"><a class="md-toc-inner" href="#a-connect-control-board-to-pc">a. Connect control board to PC</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n149"><a class="md-toc-inner" href="#b-user-interface-pronterface">b. user interface: pronterface</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n157"><a class="md-toc-inner" href="#3-tips">3 Tips</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n158"><a class="md-toc-inner" href="#1-using-notepad++-to-edit-gcode-file">(1) Using Notepad++ to edit .gcode file.</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n162"><a class="md-toc-inner" href="#support-materials">Support Materials</a></span></p></div><h1 id='1-introduction'><span>1. Introduction</span></h1><p><span>Fixture</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span> and assembly</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span> are here.</span></p><p><img src=".\assets\DIW platform.png" referrerpolicy="no-referrer" alt="Over view of DIW platform" title="Over view of DIW platform: (1) Fluid dispenser, (2) Step Motor Driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate."></p><p><span>As show above, The platform include controller board, fluid dispenser, and a 3-Axis platform. They are connected as below: </span></p><p><img src=".\assets\DIW platform-1729248264280-3.png" referrerpolicy="no-referrer" alt="DIW platform wiring diagram" title="DIW platform wiring diagram"></p><h2 id='1-controller-board-and-firmware'><span>(1) Controller Board and Firmware</span></h2><p><span>The control board uses the </span><a href='https://github.com/makerbase-mks/MKS-Monster8'><span>MKS-Monster8</span></a><span> control board from </span><a href='https://makerbase.com.cn/'><span>MakerBase</span></a><span>. This control board supports mainstream 3D printing firmware such as Marlin and Klipper. </span></p><p><img src=".\assets\image-20241018193834127.png" referrerpolicy="no-referrer" alt="image-20241018193834127"></p><p><span>You can find more information from </span><a href='https://github.com/makerbase-mks/MKS-Monster8'><span>GitHub</span></a><span>, </span><a href='https://www.bilibili.com/video/BV11h411x7KH?spm id from=333.999.0.0'><span>bilibili</span></a><span>, </span><a href='https://blog.csdn.net/gjy_skyblue/article/details/120348539'><span>Manual to set Marlin 2.0.X</span></a><span>, </span><a href='https://blog.csdn.net/gjy_skyblue/article/details/120472942?spm=1001.2014.3001.5501'><span>Manual to set Klipper</span></a><span>.</span></p><h3 id='a-technical-parameters'><span>a. Technical Parameters</span></h3><ul><li><p><span>MCU: STM32F407VET6, 168MHz, 512K flash, 192KB RAM</span></p></li><li><p><span>Power Supply：DC12-24V input(2 MP1584EN Output DC12V(For FANs) and DC5V)</span></p></li><li><p><span>3 PWM FANs + 3 power output(all power can be select by jumper and select VIN, dc12V, dc5V)</span></p></li><li><p><span>axis drivers and 9 motor interface(Driver0,1,2-1,2-2,3,4,5,6,7)</span></p></li><li><p><span>EXP1,EXP2 support MKS MINI12864,MKS TS35,LCD12864,LCD2004</span></p></li><li><p><span>USART(usart1:PA9,PA10) support MKS H43 or for other serial communication</span></p></li><li><p><span>6 endstop support power select(X-,X+,Y-,Y+,Z-,Z+) and 3D TOUCH(PA8) interface</span></p></li><li><p><span>4K eeprom on board(connect to I2C)</span></p></li><li><p><span>Built-in CAN transceiver and interface(connect to CAN)</span></p></li><li><p><span>Integrated SPI communication microsd card and reserved SPI signal interface</span></p></li><li><p><span>Integrated UDISK</span></p></li><li><p><span>Integrated virtural USB device</span></p></li><li><p><span>Support TMC UART and SPI mode, SENSORLESS_HOMING function(Diag0-5,connect to X-,Y-,Z-,X+,Y+,Z+)</span></p></li><li><p><span>Support driver power select(5V or 3.3V)</span></p></li><li><p><span>Has TVS power spike protection</span></p></li><li><p><span>Possess power reverse connection protection function</span></p></li><li><p><span>Support DFU mode set by button(Boot0)</span></p></li></ul><p><img src="./assets/image-6.png" referrerpolicy="no-referrer" alt="image-6"><img src="./assets/image-7.png" referrerpolicy="no-referrer" alt="image-7"></p><h3 id='b-wire-connection'><span>b. Wire Connection</span></h3><p><span>However, our platform needs to use the control of X, Y, and Z axes, no extrusion heating requirements, a hot bed reserved for the substrate, and the fan control port reserved for air pressure switch control and limit switch. Considering the above, the general wiring scheme is as follows:</span></p><p><img src="./assets/接线-控制板.jpg" referrerpolicy="no-referrer" alt="接线-控制板" title="Wires Connection of Control Board"></p><h3 id='c-firmware'><span>c. Firmware</span></h3><p><strong><span>Attention</span></strong><span>: This part is in case you need to adjust firmware or fix. Otherwise no need to make any adjustment.</span></p><p><a href='https://marlinfw.org/'><span>Marlin</span></a><span> is the most commonly used open source 3D printing firmware. We have modified it accordingly to meet the needs of the device:</span></p><ol start='' ><li><p><span>Enable G05 spline interpolation</span></p></li><li><p><span>Enable XYZ3 axes and set the pulse equivalent (the number of pulses corresponding to 1mm movement of each axis)</span></p></li><li><p><span>Turn off the extruder cold extrusion limit (disable the temperature sensor and set the minimum extrusion temperature to 0℃)</span></p></li><li><p><span>Adjust the configuration printing range according to the actual travel range.</span></p></li><li><p><span>Set the return to zero direction to X-, Y-, Z+</span></p></li></ol><p><span>Programming environment: Use the PlatformIO plug-in in the VScode environment.</span></p><p><span>Marlin official website: </span><a href='https://marlinfw.org/' target='_blank' class='url'>https://marlinfw.org/</a></p><p><span>Original Marlin resources: </span><a href='https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4' target='_blank' class='url'>https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4</a></p><p><span>Customized Marlin resources</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup></p><h2 id='2-step-motor-driver-and-endstop'><span>(2) Step Motor, Driver and endstop</span></h2><h3 id='a-step-motor'><span>a. Step Motor</span></h3><p><span>The motor used is a 57 stepper motor.</span></p><p><span>The stepper motor is first connected to the driver, which needs to be powered and connected to the control board.</span></p><p><span>Its control mode is position control mode, that is, each time a pulse is sent, the stepper motor rotates a specific angle according to the driver&#39;s setting. For a 57 stepper motor, the step angle θ is 0.8° (that is, 1 pulse corresponds to a 0.8° rotation of the motor shaft), and the driver can set the coefficient n, so that the step angle becomes θ/n, thereby improving the motion accuracy. However, this improvement is also limited. It is generally believed that when the subdivision number is greater than 32, the effect of improving the accuracy will become limited. When the subdivision number is higher than 32, the main contribution is to improve the smoothness of the movement.</span></p><h3 id='b-driver'><span>b. Driver</span></h3><p><span>I didn&#39;t see the brand and model of the drive I was using, but I copied down its settings panel:</span></p><p><img src="./assets/接线-不进驱动.jpg" referrerpolicy="no-referrer" alt="接线-不进驱动"></p><p><span>The current peak and subdivision can be adjusted by adjusting the driver&#39;s dip switches. The original configuration is highlighted, and I used that configuration.</span></p><h3 id='c-wire-connection'><span>c. Wire Connection</span></h3><p><span>previous-version wire connection:</span></p><p><img src="./assets/原有线序-步进电机.jpg" referrerpolicy="no-referrer" alt="原有线序-步进电机"></p><p><span>Refer to the previous-version method for wiring. It should be pointed out that an adapter board is used to plug directly into the control board, and then the wiring is done. The common terminal (COM) is grounded, and the others include Enable, Pulse, and Direction. And the cable colors correspond to the following figure:</span></p><p><img src="./assets/接线-步进电机.jpg" referrerpolicy="no-referrer" alt="接线-步进电机"></p><h3 id='d-endstop'><span>d. Endstop</span></h3><p><img src="./assets/原有线序-步进电机 - 副本.jpg" referrerpolicy="no-referrer" alt="原有线序-步进电机 - 副本"></p><p><span>During the actual debugging process, it was found that the original vcc 5V could not meet the needs of use, and sometimes there would be a problem of insufficient voltage. The working voltage marked on the sensor is 0~24V, so 24V voltage was selected as the power supply.</span></p><p><span>As can be seen in the overview diagram, the Z+ endstop voltage selection is mentioned. Here, the applied voltage can be adjusted by adjusting the line connection method.</span></p><h2 id='3-pressure-dispenser'><span>(3) Pressure Dispenser</span></h2><p><span>The air pressure switch control is controlled through the Controllable Fan port, the voltage is adjusted to 24V and connected to the relay module, and the other end is connected to the air pressure dispenser (pressure dispenser) to perform air pressure switch control (switch control).</span></p><h3 id='a-technical-indicators'><span>a. Technical indicators：</span></h3><ol start='' ><li><p><span>Dispensing mode: 16 freely set modes, with dispensing time display*</span></p></li><li><p><span>Automatic timing dispensing: 00.01S-99.99S</span></p></li><li><p><span>Dispensing interval time: 0.1-9.9S (automatic timing function)</span></p></li><li><p><span>Input voltage: 220V±10% 50Hz/110V±10% 60Hz</span></p></li><li><p><span>Internal voltage: 12VDC/24VDC</span></p></li><li><p><span>Input air pressure: 10-100pSi</span></p></li><li><p><span>Output air pressure: 1-80 pSi</span></p></li><li><p><span>Dimensions: 235×225×63mm</span></p></li><li><p><span>Weight: 2.8kg</span></p></li></ol><h3 id='b-instructions'><span>b. Instructions:</span></h3><p><span>Refer to Manual of pressure dispenser</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><span>:</span></p><p><span>The SETUP four-position dispensing time programmer DIP switch on the back can be used to select 16 dispensing modes by toggling it. The mode combination settings are as follows:</span></p><table>
-<capital>Mode Sets</capital>
+<div id='write' class=''>
+<h1 id="diw-platform--material-extrusion-3d-printing-system">DIW Platform — Material Extrusion 3D Printing System</h1>
+<p><a href="LICENSE"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg" /></a>
+<a href="https://marlinfw.org"><img alt="Firmware" src="https://img.shields.io/badge/Firmware-Marlin%202.1.2.4-brightgreen" /></a></p>
+<blockquote>
+<p><strong>Direct Ink Writing (DIW)</strong> 3D printing platform developed at <strong>NUS CDE AML Lab</strong>. This system adapts mainstream 3D printing hardware (MKS-Monster8 + Marlin) for room-temperature material extrusion, enabling precise deposition of functional inks (cement pastes, gels, slurries, etc.).</p>
+</blockquote>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#1-introduction">Introduction</a>
+   - <a href="#11-system-overview">1.1 System Overview</a>
+   - <a href="#12-controller-board--firmware">1.2 Controller Board &amp; Firmware</a>
+   - <a href="#13-stepper-motors-drivers--endstops">1.3 Stepper Motors, Drivers &amp; Endstops</a>
+   - <a href="#14-pressure-dispenser">1.4 Pressure Dispenser</a></li>
+<li><a href="#2-getting-started">Getting Started</a>
+   - <a href="#21-prepare-g-code">2.1 Prepare G-Code</a>
+   - <a href="#22-connection--communication">2.2 Connection &amp; Communication</a></li>
+<li><a href="#3-tips--troubleshooting">Tips &amp; Troubleshooting</a></li>
+<li><a href="#support-materials">Support Materials</a></li>
+</ol>
+<hr />
+<h1 id="1-introduction">1. Introduction</h1>
+<p>Fixture<sup class="md-footnote" id="fnref:7"><a class="footnote-ref" href="#fn:7">2</a></sup> and assembly<sup class="md-footnote" id="fnref:6"><a class="footnote-ref" href="#fn:6">1</a></sup> are available in the <a href="./assets/3Dmodels/">3Dmodels</a> directory.</p>
+<blockquote>
+<p><strong>Figure 1.</strong> Overview of DIW platform: (1) Fluid dispenser, (2) Step motor driver box, (3) Controller board, (4) Motion control platform, (5) Syringe barrel, (6) Substrate.</p>
+<p><img alt="DIW platform overview" src="assets/DIW_platform-1729561311102-3.png" /></p>
+</blockquote>
+<p>The platform consists of a controller board, fluid dispenser, and a 3-axis motion platform. The wiring connections between components are illustrated below:</p>
+<blockquote>
+<p><strong>Figure 2.</strong> DIW platform wiring diagram.</p>
+<p><img alt="DIW platform wiring diagram" src="assets/DIW_platform-1729248264280-3.png" /></p>
+</blockquote>
+<h2 id="11-system-overview">1.1 System Overview</h2>
+<table>
+<thead>
 <tr>
-<th rowspan=2 align="center">No.</th>
-<th colspan=4 align="center">Switch status</th>
-<th rowspan=2 align="center">Function</th>
+<th>Component</th>
+<th>Specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Controller</td>
+<td>MKS-Monster8 (STM32F407VET6, 168MHz)</td>
 </tr>
 <tr>
-<th align="center">S1</th>
-<th align="center">S2</th>
-<th align="center">S3</th>
-<th align="center">S4</th>
+<td>Motors</td>
+<td>57 stepper motors × 3 axes</td>
 </tr>
 <tr>
-<th align="center">1</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="left">  Inching mode, press/depress and hold to maintain extrusion</th>
+<td>Dispenser</td>
+<td>JND-983A pneumatic dispensing valve</td>
 </tr>
 <tr>
-<th align="center">2</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="left">  Hold mode: press/depress the switch once to continue extrusion for the set time; press/depress the switch again to stop extrusion.</th>
+<td>Nozzles</td>
+<td>0.4 mm / 0.8 mm diameter</td>
 </tr>
 <tr>
-<th align="center">3</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="left">  Inching timing mode, press/depress and hold to maintain the extrusion time</th>
+<td>Firmware</td>
+<td>Marlin 2.1.2.4 (customized)</td>
 </tr>
 <tr>
-<th align="center">4</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="left">  Automatically and continuously extrude according to the set time</th>
+<td>Slicer</td>
+<td>PrusaSlicer 2.7.4</td>
 </tr>
 <tr>
-<th align="center">5</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 1 time according to the set time.</th>
+<td>Host Software</td>
+<td>Pronterface</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-controller-board--firmware">1.2 Controller Board &amp; Firmware</h2>
+<p>The controller uses the <a href="https://github.com/makerbase-mks/MKS-Monster8">MKS-Monster8</a> board from <a href="https://makerbase.com.cn/">MakerBase</a>, supporting mainstream 3D printing firmware (Marlin, Klipper).</p>
+<blockquote>
+<p><strong>Figure 3.</strong> MKS-Monster8 controller board.</p>
+<p><img alt="MKS-Monster8 board" src="assets/image_20241018193834127.png" /></p>
+</blockquote>
+<p><strong>References:</strong> <a href="https://github.com/makerbase-mks/MKS-Monster8">GitHub</a> | <a href="https://www.bilibili.com/video/BV11h411x7KH">Video Guide</a> | <a href="https://blog.csdn.net/gjy_skyblue/article/details/120348539">Marlin Setup</a> | <a href="https://blog.csdn.net/gjy_skyblue/article/details/120472942">Klipper Setup</a></p>
+<h3 id="technical-parameters">Technical Parameters</h3>
+<ul>
+<li><strong>MCU:</strong> STM32F407VET6 (168MHz, 512KB Flash, 192KB RAM)</li>
+<li><strong>Power Supply:</strong> DC 12-24V input (2× MP1584EN outputs: DC12V for fans, DC5V)</li>
+<li><strong>Fans:</strong> 3× PWM fans + 3× power outputs (selectable via jumper: VIN/DC12V/DC5V)</li>
+<li><strong>Motors:</strong> 9 driver interfaces (Driver 0-7)</li>
+<li><strong>Displays:</strong> EXP1/EXP2 for MKS MINI12864, MKS TS35, LCD12864, LCD2004</li>
+<li><strong>Serial:</strong> USART1 (PA9/PA10) for MKS Robin or custom serial communication</li>
+<li><strong>Endstops:</strong> 6 inputs with power selection (X-, X+, Y-, Y+, Z-, Z+) + 3D TOUCH (PA8)</li>
+<li><strong>Storage:</strong> 4KB EEPROM (I2C), onboard microSD card (SPI)</li>
+<li><strong>Communication:</strong> CAN transceiver, SPI interface, virtual USB device, UDISK</li>
+<li><strong>Drivers:</strong> TMC UART/SPI modes, SENSORLESS_HOMING (Diag0-5)</li>
+<li><strong>Driver Voltage:</strong> Selectable 5V/3.3V</li>
+<li><strong>Protection:</strong> TVS spike protection, reverse connection protection</li>
+<li><strong>Boot Mode:</strong> DFU via Boot0 button</li>
+</ul>
+<blockquote>
+<p><strong>Figure 4-5.</strong> Pinout and connector layout.</p>
+<p><img alt="Pinout" src="./assets/image-6.png" /> <img alt="Connectors" src="./assets/image-7.png" /></p>
+</blockquote>
+<h3 id="wiring-configuration">Wiring Configuration</h3>
+<p>Our platform controls X/Y/Z axes only — no extrusion heating is required. The hot bed is reserved for the substrate, and the fan control port is repurposed for air pressure switch control and limit switches.</p>
+<blockquote>
+<p><strong>Figure 6.</strong> Control board wiring for DIW platform.</p>
+<p><img alt="Control board wiring" src="./assets/接线-控制板.jpg" /></p>
+</blockquote>
+<h3 id="firmware-configuration">Firmware Configuration</h3>
+<blockquote>
+<p><strong>Note:</strong> Only modify the firmware if you need to adjust parameters or troubleshoot. The default configuration requires no changes.</p>
+</blockquote>
+<p><a href="https://marlinfw.org/">Marlin</a> is the most widely used open-source 3D printing firmware. Key customizations for this platform:</p>
+<ol>
+<li><strong>G05 spline interpolation</strong> — enabled for smooth motion</li>
+<li><strong>XYZ 3-axis configuration</strong> — pulse equivalent set (pulses per mm for each axis)</li>
+<li><strong>Cold extrusion protection disabled</strong> — temperature sensor off, minimum extrusion temperature set to 0°C</li>
+<li><strong>Build volume</strong> — adjusted to match actual travel range</li>
+<li><strong>Homing direction</strong> — set to X-, Y-, Z+</li>
+</ol>
+<p><strong>Development Environment:</strong> VS Code with PlatformIO extension</p>
+<p><strong>Resources:</strong>
+- Marlin official: https://marlinfw.org/
+- Original config: https://github.com/MarlinFirmware/Configurations/tree/release-2.1.2.4
+- Custom Marlin build: https://lecloud.lenovo.com/share/2JQMt9CWcRS9uVE4x (password: <code>pgjg</code>)</p>
+<h2 id="13-stepper-motors-drivers--endstops">1.3 Stepper Motors, Drivers &amp; Endstops</h2>
+<h3 id="stepper-motors">Stepper Motors</h3>
+<p>The platform uses <strong>57-series stepper motors</strong> (NEMA-23) for all three axes.</p>
+<p><strong>Working Principle:</strong> Position control via pulse signals. Each pulse rotates the motor by a specific angle. For a standard 57 stepper:</p>
+<ul>
+<li><strong>Step angle (θ):</strong> 0.8° (1 pulse = 0.8° rotation)</li>
+<li><strong>Microstepping:</strong> Driver divides each step by coefficient <code>n</code>, effective step angle = θ/n</li>
+<li><strong>Accuracy note:</strong> Microstepping beyond 32× yields diminishing accuracy returns; higher settings primarily improve smoothness</li>
+</ul>
+<h3 id="driver-configuration">Driver Configuration</h3>
+<blockquote>
+<p><strong>Figure 7.</strong> Driver dip switch settings (highlighted = original configuration used).</p>
+<p><img alt="Driver settings" src="./assets/接线-不进驱动.jpg" /></p>
+</blockquote>
+<p>Current peak value and microstepping resolution are configured via dip switches on the driver.</p>
+<h3 id="motor-wiring">Motor Wiring</h3>
+<blockquote>
+<p><strong>Figure 8.</strong> Original stepper motor wiring reference.</p>
+<p><img alt="Original wiring" src="./assets/原有线序-步进电机.jpg" /></p>
+</blockquote>
+<p>An adapter board interfaces with the controller. Terminals: <strong>COM</strong> (ground), <strong>Enable</strong>, <strong>Pulse</strong>, <strong>Direction</strong>. Wire color coding:</p>
+<blockquote>
+<p><strong>Figure 9.</strong> Stepper motor cable color reference.</p>
+<p><img alt="Motor cable colors" src="./assets/接线-步进电机.jpg" /></p>
+</blockquote>
+<h3 id="endstop-sensors">Endstop Sensors</h3>
+<blockquote>
+<p><strong>Figure 10.</strong> Endstop wiring configuration.</p>
+<p><img alt="Endstop wiring" src="./assets/原有线序-步进电机 - 副本.jpg" /></p>
+<p><strong>⚠️ Important:</strong> The default 5V supply proved unreliable during testing. Endstop sensors require <strong>24V</strong> (rated 0-24V). Adjust the wire connection to select the appropriate voltage — the Z+ endstop supports both voltage options via jumper selection.</p>
+</blockquote>
+<h2 id="14-pressure-dispenser">1.4 Pressure Dispenser</h2>
+<p>The pneumatic switch is controlled via the fan output port: the controller adjusts the voltage to 24V, triggering a relay module that switches the pressure dispenser on/off.</p>
+<h3 id="technical-specifications">Technical Specifications</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dispensing Modes</td>
+<td>16 programmable modes with time display</td>
 </tr>
 <tr>
-<th align="center">6</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 2 times according to the set time.</th>
+<td>Dispensing Time</td>
+<td>0.01–99.99 s</td>
 </tr>
 <tr>
-<th align="center">7</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 3 times according to the set time.</th>
+<td>Interval Time</td>
+<td>0.1–9.9 s (auto mode)</td>
 </tr>
 <tr>
-<th align="center">8</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 4 times according to the set time.</th>
+<td>Input Voltage</td>
+<td>220V±10% 50Hz / 110V±10% 60Hz</td>
 </tr>
 <tr>
-<th align="center">9</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 5 times according to the set time.</th>
+<td>Control Voltage</td>
+<td>12VDC / 24VDC</td>
 </tr>
 <tr>
-<th align="center">10</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 6 times according to the set time.</th>
+<td>Input Pressure</td>
+<td>10–100 PSI</td>
 </tr>
 <tr>
-<th align="center">11</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="left">  Press/depress the switch once to squeeze out 7 times according to the set time.</th>
+<td>Output Pressure</td>
+<td>1–80 PSI</td>
 </tr>
 <tr>
-<th align="center">12</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="left">  Press/depress the switch once to squeeze out 8 times according to the set time.</th>
+<td>Dimensions</td>
+<td>235×225×63 mm</td>
 </tr>
 <tr>
-<th align="center">13</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="left">  Press/depress the switch once to squeeze out 9 times according to the set time.</th>
+<td>Weight</td>
+<td>2.8 kg</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mode-configuration">Mode Configuration</h3>
+<p>The 4-position DIP switch on the rear panel selects between 16 dispensing modes. Full manual: <a href="./assets/JND-983A点胶机详细功能设置.docx">JND-983A dispensing guide</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mode</th>
+<th style="text-align: center;">S1</th>
+<th style="text-align: center;">S2</th>
+<th style="text-align: center;">S3</th>
+<th style="text-align: center;">S4</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td><strong>Inching</strong> — hold to extrude, release to stop</td>
 </tr>
 <tr>
-<th align="center">14</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="left">  Press/depress the switch once to squeeze out 10 times according to the set time.</th>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td>Hold — press once to start timed extrusion, press again to stop</td>
 </tr>
 <tr>
-<th align="center">15</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="left">  Press/depress the switch once to squeeze out 11 times according to the set time.</th>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td>Inching timing — hold for timed extrusion</td>
 </tr>
 <tr>
-<th align="center">16</th>
-<th align="center">Off</th>
-<th align="center">Off</th>
-<th align="center">On</th>
-<th align="center">On</th>
-<th align="left">  Press/depress the switch once to squeeze out 12 times according to the set time.</th>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td>Auto continuous — extrude according to set time</td>
 </tr>
-</table><p>&nbsp;</p><p><span>The mode actually used is Set 1.</span></p><h3 id='c-operation'><span>c. Operation</span></h3><ol start='' ><li><p><span>Pressure adjustment: Adjust the air pressure by adjusting the black knob</span></p></li><li><p><span>Switch: You can press the small red button on the left to adjust manually, or you can use an external pedal to adjust manually (this interface has been modified for program control); the control method is detailed in the manual.</span></p></li></ol><h3 id='d-additional-material'><span>d. Additional Material</span></h3><p><span>3D model of Syringe Barrel</span><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span> and Nozzle</span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span>, and data sheet of Nozzle</span><sup class='md-footnote'><a href='#dfref-footnote-7' name='ref-footnote-7'>7</a></sup><span> are provided. </span></p><h1 id='2-get-start'><span>2. Get Start</span></h1><p><strong><span>Before start</span></strong><span> one need to ask Lab admin to provide compressed air.</span></p><ol start='' ><li><p><span>First we need to get the G code (generated by slicing, optimized and edited). </span></p></li><li><p><span>Then we need to connect the control board to the computer, open the user interface, establish serial communication, and then import the G code file to start printing. </span></p></li><li><p><span>During the printing process, the PC sends the G code to the buffer area of the control board through the serial port. The control board continuously reads the instructions in the buffer, and converts them into control signals through decoding and interpolation: enable, direction, pulse, and send them to the stepper motor driver, and then the driver controls the movement of the stepper motor.</span></p></li><li><p><span>The PC sends M106/M107 commands to the control board, which regulates the voltage of the port originally designated for fan switch control. This voltage change triggers the connected relay, thereby enabling switch control of the external interface reserved for the air pressure distributor, achieving the on/off switching of the air pressure.</span></p></li></ol><h2 id='1-prepare-g-code'><span>(1) Prepare G-Code</span></h2><h3 id='a-slicing-software'><span>a. Slicing software</span></h3><h4 id='①-slic3r'><span>① Slic3r</span></h4><p><span>Slic3r is an open source slicing software, but it has stopped development, so there are some bugs.</span></p><p><span>Web：</span><a href='https://slic3r.org/' target='_blank' class='url'>https://slic3r.org/</a></p><p><img src="./assets/scli3r.png" referrerpolicy="no-referrer" alt="scli3r"></p><h4 id='②-prusaslicer'><span>② PrusaSlicer</span></h4><p><span>PrusaSlicer is a fork of Slic3r, which is still under development and has a relatively active community. I used Slic3r before, but because of too many bugs, I have now switched to PrusaSlicer.</span></p><p><span>Web：</span><a href='https://www.prusa3d.com/page/prusaslicer_424/' target='_blank' class='url'>https://www.prusa3d.com/page/prusaslicer_424/</a></p><p><img src="./assets/PrusaSlicer.png" referrerpolicy="no-referrer" alt="PrusaSlicer"></p><p>&nbsp;</p><h2 id='2-connection-and-communication'><span>(2) Connection and communication</span></h2><h3 id='a-connect-control-board-to-pc'><span>a. Connect control board to PC</span></h3><h3 id='b-user-interface-pronterface'><span>b. user interface: pronterface</span></h3><p><span>Web: </span><a href='https://www.pronterface.com/' target='_blank' class='url'>https://www.pronterface.com/</a></p><p><img src="./assets/pronterface.png" referrerpolicy="no-referrer" alt="pronterface"></p><p><span>This computer [right-click] → Manage [Open &quot;Computer Management&quot;] → Click Device Manager → Check the port (find the new port that appears after connecting the control board and remember it)</span></p><p><img src="./assets/QQ_1722011347970.png" referrerpolicy="no-referrer" alt="QQ_1722011347970"></p><p><span>Select the appropriate port and baud rate to establish a connection:</span></p><p><img src="./assets/QQ_1722011575548.png" referrerpolicy="no-referrer" alt="QQ_1722011575548"></p><p><span>Manually control the movement of each axis and the air pressure switch to test whether the connection is successful.</span></p><h1 id='3-tips'><span>3 Tips</span></h1><h2 id='1-using-notepad++-to-edit-gcode-file'><span>(1) Using Notepad++ to edit .gcode file.</span></h2><p><span>Notepad++ (</span><a href='https://notepad-plus-plus.org/downloads/'><span>Downloads | Notepad++ (notepad-plus-plus.org)</span></a><span>) supports macro recording, which meets our needs in terms of functionality and, as far as I know, is irreplaceable.</span></p><p><span>It needs to be stated that the author of this software violated the One China Principle, and the author of this manual opposes any form of national division.</span></p><p><img src="./assets/image-20241018222854465.png" referrerpolicy="no-referrer" alt="image-20241018222854465"></p><h1 id='support-materials'><span>Support Materials</span></h1><p>&nbsp;</p><p>&nbsp;</p><div class='footnotes-area'  ><hr/>
-<div class='footnote-line'><span class='md-fn-count'>1</span> <a href='.\assets\3Dmodels\STL'><span>STLs</span></a> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>2</span> <a href='.\assets\3Dmodels\STP\Assembly - Carriage-Z.STEP'><span>Assembly - Carriage-Z.STEP</span></a> <a name='dfref-footnote-2' href='#ref-footnote-2' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>3</span> <a href='.\assets\Marlin-NUS.zip'><span>Customized Marlin firmware for AML DIW printer</span></a> <a name='dfref-footnote-3' href='#ref-footnote-3' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>4</span> <a href='.\assets\JND-983A点胶机详细功能设置.docx'><span>Manual of pressure dispenser</span></a> <a name='dfref-footnote-4' href='#ref-footnote-4' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>5</span> <a href='.\assets\3Dmodels\SLDPRT\syringe.zip'><span>3D model of syringe</span></a><span> </span> <a name='dfref-footnote-5' href='#ref-footnote-5' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>6</span> <a href='.\assets\3Dmodels\SLDPRT\tips.rar'><span>3D model of nozzle</span></a><span> </span> <a name='dfref-footnote-6' href='#ref-footnote-6' title='回到文档' class='reversefootnote' >↩</a></div>
-<div class='footnote-line'><span class='md-fn-count'>7</span> <a href='.\assets\技术表格.pdf'><span>Data sheet of nozzle</span></a><span> </span> <a name='dfref-footnote-7' href='#ref-footnote-7' title='回到文档' class='reversefootnote' >↩</a></div></div></div></div>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 1 dispense per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 2 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 3 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 4 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 5 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 6 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td>Single-shot — 7 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td>Single-shot — 8 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td>Single-shot — 9 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td>Single-shot — 10 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td>Single-shot — 11 dispenses per press</td>
+</tr>
+<tr>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">Off</td>
+<td style="text-align: center;">On</td>
+<td style="text-align: center;">On</td>
+<td>Single-shot — 12 dispenses per press</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> This platform uses <strong>Mode 1 (Inching)</strong>.</p>
+</blockquote>
+<h3 id="operation">Operation</h3>
+<ol>
+<li><strong>Pressure adjustment</strong> — rotate the black knob to set output pressure</li>
+<li><strong>Manual trigger</strong> — press the red button on the left side, or use an external foot pedal (modified for program control)</li>
+</ol>
+<h3 id="additional-resources">Additional Resources</h3>
+<ul>
+<li><a href="./assets/3Dmodels/SLDPRT/syringe.zip">Syringe barrel 3D model</a> (SolidWorks)</li>
+<li><a href="./assets/3Dmodels/SLDPRT/tips.rar">Nozzle 3D model</a> (SolidWorks)</li>
+<li><a href="./assets/技术表格.pdf">Nozzle data sheet</a></li>
+</ul>
+<hr />
+<h1 id="2-getting-started">2. Getting Started</h1>
+<blockquote>
+<p><strong>Prerequisite:</strong> Request compressed air supply from the Lab admin before first use.</p>
+</blockquote>
+<h3 id="workflow-overview">Workflow Overview</h3>
+<pre><code>3D Model → PrusaSlicer → G-code Editing → Pronterface → Controller Board
+                                                  ↓
+                                        ┌─────────┴──────────┐
+                                        ↓                    ↓
+                                 XYZ Stepper Motors    Fan Port (M106/M107)
+                                 (position control)    → Relay → Pressure valve
+</code></pre>
+<p>The PC sends G-code to the controller board's serial buffer. The board decodes and interpolates the instructions into control signals (enable, direction, pulse) for the stepper motor drivers. Meanwhile, <code>M106</code>/<code>M107</code> commands control the fan port voltage, triggering the relay to switch the pneumatic valve on/off.</p>
+<h2 id="21-prepare-g-code">2.1 Prepare G-Code</h2>
+<h3 id="slicing-software">Slicing Software</h3>
+<h4 id="prusaslicer-recommended">PrusaSlicer (Recommended)</h4>
+<p>PrusaSlicer is an actively maintained fork of Slic3r with an active community and fewer bugs.</p>
+<ul>
+<li><strong>Download:</strong> https://www.prusa3d.com/page/prusaslicer_424/</li>
+</ul>
+<blockquote>
+<p><strong>Figure 11.</strong> PrusaSlicer interface.</p>
+<p><img alt="PrusaSlicer" src="./assets/PrusaSlicer.png" /></p>
+</blockquote>
+<p>Customized profiles for the AML DIW platform are provided for both <strong>0.4mm</strong><sup class="md-footnote" id="fnref:8"><a class="footnote-ref" href="#fn:8">3</a></sup> and <strong>0.8mm</strong><sup class="md-footnote" id="fnref:9"><a class="footnote-ref" href="#fn:9">4</a></sup> nozzles.</p>
+<h4 id="slic3r-legacy">Slic3r (Legacy)</h4>
+<blockquote>
+<p>⚠️ Slic3r is no longer maintained and contains known bugs. Use PrusaSlicer instead.</p>
+</blockquote>
+<ul>
+<li><strong>Download:</strong> https://slic3r.org/</li>
+</ul>
+<blockquote>
+<p><strong>Figure 12.</strong> Slic3r interface.</p>
+<p><img alt="Slic3r" src="./assets/scli3r.png" /></p>
+</blockquote>
+<h2 id="22-connection--communication">2.2 Connection &amp; Communication</h2>
+<h3 id="step-1-connect-controller-to-pc">Step 1: Connect Controller to PC</h3>
+<p>Connect the controller board via USB. Identify the COM port:</p>
+<ul>
+<li><strong>Windows 10 and earlier:</strong> Right-click "This PC" → Manage → Device Manager → Ports (COM &amp; LPT)</li>
+<li><strong>Windows 11:</strong> Shift + Right-click "This PC" → Manage → Device Manager → Ports (COM &amp; LPT)</li>
+</ul>
+<blockquote>
+<p><strong>Figure 13.</strong> Identifying the COM port in Device Manager.</p>
+<p><img alt="Device Manager" src="./assets/QQ_1722011347970.png" /></p>
+</blockquote>
+<h3 id="step-2-open-pronterface">Step 2: Open Pronterface</h3>
+<p><strong>Pronterface</strong> is the host interface for sending G-code to the controller.</p>
+<ul>
+<li><strong>Download:</strong> https://www.pronterface.com/</li>
+</ul>
+<blockquote>
+<p><strong>Figure 14.</strong> Pronterface interface.</p>
+<p><img alt="Pronterface" src="./assets/pronterface.png" /></p>
+</blockquote>
+<p>Select the correct COM port and baud rate, then click <strong>Connect</strong>:</p>
+<blockquote>
+<p><strong>Figure 15.</strong> Establishing connection in Pronterface.</p>
+<p><img alt="Connection setup" src="./assets/QQ_1722011575548.png" /></p>
+</blockquote>
+<p>Verify the connection by manually controlling each axis and the pneumatic switch.</p>
+<blockquote>
+<p><strong>Tip:</strong> Marlin G-code reference — https://marlinfw.org/meta/gcode/</p>
+</blockquote>
+<hr />
+<h1 id="3-tips--troubleshooting">3. Tips &amp; Troubleshooting</h1>
+<h2 id="editing-g-code-with-notepad">Editing G-code with Notepad++</h2>
+<p><a href="https://notepad-plus-plus.org/downloads/">Notepad++</a> supports macro recording, which is invaluable for batch G-code editing.</p>
+<blockquote>
+<p><strong>Figure 16.</strong> Macro recording in Notepad++.</p>
+<p><img alt="Notepad++ macros" src="./assets/image-20241018222854465.png" /></p>
+</blockquote>
+<h3 id="macro-recording-best-practices">Macro Recording Best Practices</h3>
+<ol>
+<li><strong>Use keyboard shortcuts</strong> — avoid mouse clicks during recording. Use <code>Home</code>/<code>End</code> instead of arrow keys to move the cursor</li>
+<li><strong>Mind the end cursor position</strong> — ensure the final cursor position doesn't cause the macro's search to loop infinitely</li>
+<li><strong>Use escape characters</strong> — e.g., replace <code>M106\nM106</code> (duplicate lines) with a single <code>M106</code> using regex search/replace</li>
+</ol>
+<h2 id="common-issues">Common Issues</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Endstops not triggering</td>
+<td>Verify 24V supply (5V is insufficient)</td>
+</tr>
+<tr>
+<td>Inconsistent extrusion</td>
+<td>Check compressed air pressure (10-100 PSI input, 1-80 PSI output)</td>
+</tr>
+<tr>
+<td>Firmware won't compile</td>
+<td>Use VS Code + PlatformIO; verify correct board settings</td>
+</tr>
+<tr>
+<td>Pronterface can't connect</td>
+<td>Confirm COM port and baud rate match the firmware configuration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="support-materials">Support Materials</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Resource</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pressure dispenser manual</td>
+<td><a href="./assets/JND-983A点胶机详细功能设置.docx">JND-983A 点胶机详细功能设置.docx</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Syringe barrel 3D model (SLDPRT)</td>
+<td><a href="./assets/3Dmodels/SLDPRT/syringe.zip">syringe.zip</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Nozzle 3D model (SLDPRT)</td>
+<td><a href="./assets/3Dmodels/SLDPRT/tips.rar">tips.rar</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>Nozzle data sheet</td>
+<td><a href="./assets/技术表格.pdf">技术表格.pdf</a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Assembly — Z-axis carriage (STEP)</td>
+<td><a href="./assets/3Dmodels/STP/Assembly-Carriage-Z.STEP">Assembly-Carriage-Z.STEP</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Printable fixtures (STL)</td>
+<td><a href="./assets/3Dmodels/STL">STLs</a></td>
+</tr>
+<tr>
+<td>7</td>
+<td>PrusaSlicer profile — 0.41mm nozzle</td>
+<td><a href="./assets/Set_Blue.ini">Set_Blue.ini</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>PrusaSlicer profile — 0.84mm nozzle</td>
+<td><a href="./assets/Set_Green.ini">Set_Green.ini</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<blockquote>
+<p><strong>Maintained by</strong> NUS CDE AML Lab · <strong>License:</strong> <a href="LICENSE">GPL v3</a> · <strong>Last updated:</strong> 2026-10-16</p>
+</blockquote>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn:6">
+<p><a href="./assets/3Dmodels/STP/Assembly-Carriage-Z.STEP">Z-axis carriage assembly (STEP)</a>&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="./assets/3Dmodels/STL">Printable fixtures (STL)</a>&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="./assets/Set_Blue.ini">0.41mm nozzle PrusaSlicer profile</a>&#160;<a class="footnote-backref" href="#fnref:8" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:9">
+<p><a href="./assets/Set_Green.ini">0.84mm nozzle PrusaSlicer profile</a>&#160;<a class="footnote-backref" href="#fnref:9" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+</div></div>
 </body>
 </html>
