@@ -1,0 +1,18 @@
+# FreeFileSync
+*.ffs_db
+*.ffs_batch
+
+# Windows
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+
+# Office temporary files
+~$*
+
+# Backup / temp files
+*.bak
+*.tmp
